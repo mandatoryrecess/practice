@@ -8,19 +8,15 @@
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
-nums = [0,0,1,1,1,2,2,3,3,4];
-var removeDuplicates = function(nums) {
-  let newArray = []; 
-  console.log(nums)
-  for (let x = 0; x < nums.length; x++) {
-      if(!nums[x] === newArray) {
-        newArray++; 
-        newArray = nums;
-      }
-      return newArray;
-    }
-console.log(newArray);
-    
-};
 
-removeDuplicates(nums);
+let nums = [0,0,1,1,1,2,2,3,3,4];
+
+let uniqueData=[];
+
+nums.forEach(elem=>{
+  if(!uniqueData.includes(elem)){
+    uniqueData.push(elem);
+  }
+})
+console.log(uniqueData);
+
