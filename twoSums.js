@@ -11,20 +11,19 @@
 
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
-let nums = [3,2,4]; 
+let nums = [2,2,4]; 
 let target = 6;
-let indexArray = [];
-var twoSum = function(nums, target) {
+let result = 0; 
+let twoSum = function(nums, target) {
 
-    nums.forEach(elem=>{
-      nums.forEach(secondElem=>{
-        if((elem + secondElem) === target){
-          indexArray.push(nums.indexOf(elem))
-        }   
-        return indexArray; 
-      })
-    })
-    console.log(indexArray)
+  for(let x = 0; x < nums.length; x++) {
+    let tmp = target - nums[x]
+   for(let y = 0; y < nums.length; y++){
+     if(tmp === nums[y]){
+       return [x, y]
+     }   
+   }
+  }
 };
 
-twoSum(nums, target);
+console.log(twoSum(nums, target));
